@@ -26,7 +26,12 @@ const Posts = () => {
       {postIsLoading && <p>Loading...</p>}
       {postHasError && <p>Try again...</p>}
       <ul className="posts-list">
-        <Link to="/" onClick={dispatch(clearSearchTerm())}>
+        <Link
+          to="/"
+          onClick={() => {
+            dispatch(clearSearchTerm());
+          }}
+        >
           Click to go back to searching
         </Link>
         {Object.values(posts).map((post) => {

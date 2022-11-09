@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectSubreddits } from "./subredditsSlice.js";
@@ -9,10 +9,16 @@ const Subreddits = () => {
   const dispatch = useDispatch();
   const subreddits = useSelector(selectSubreddits);
   let icon = "http://getdrawings.com/free-icon/reddit-alien-icon-68.png";
+
   return (
     <section className="subreddits">
       {subreddits.length ? (
-        <Link to="/" onClick={dispatch(clearSearchTerm())}>
+        <Link
+          to="/"
+          onClick={() => {
+            dispatch(clearSearchTerm());
+          }}
+        >
           Click to go back to searching
         </Link>
       ) : (

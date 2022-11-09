@@ -14,7 +14,6 @@ function App() {
       Reddit.getAccessToken();
     });
   }, []);
-
   return (
     <div className="App">
       <Routes>
