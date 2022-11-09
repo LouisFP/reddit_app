@@ -16,8 +16,6 @@ const Comments = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const id = Object.values(params)[1].toString();
-  console.log(Object.values(comments));
-  console.log(comments.replies);
 
   useEffect(() => {
     dispatch(loadComments(id));
@@ -25,37 +23,35 @@ const Comments = () => {
 
   return (
     <section className="comments-section">
-      <Link to="/" onClick={dispatch(clearSearchTerm())}>
+      <Link to="/" onClick={() => dispatch(clearSearchTerm())}>
         Click to go back to searching
       </Link>
       {commentIsLoading && <p>Loading...</p>}
       {commentHasError && <p>Try again...</p>}
+      {comments.length === 0 && <p>There are no comments, sorry!</p>}
       <ul className="comments-list">
         {Object.values(comments).map((comment) => {
           return (
-            <li key={comments.id} className="comment">
+            <li key={comment.id} className="comment">
               <div className="comment-container">
                 <h3>Author: {comment.author}</h3>
                 <p>{comment.body}</p>
               </div>
-              if (comments.replies)
-              {
-                <ul className="replies">
-                  {comments.replies.map((reply) => {
-                    if (reply.kind === "t1") {
-                      return (
-                        <li key={reply.data.id} className="comment-reply">
-                          <h3>Author: {reply.data.author}</h3>
-                          <p>{reply.data.body}</p>
-                          <p>Upvotes: {reply.data.score}</p>
-                        </li>
-                      );
-                    } else {
-                      return null;
-                    }
-                  })}
-                </ul>
-              }
+              <ul className="replies">
+                {comment.replies.map((reply) => {
+                  if (reply.kind === "t1") {
+                    return (
+                      <li key={reply.data.id} className="comment-reply">
+                        <h3>Author: {reply.data.author}</h3>
+                        <p>{reply.data.body}</p>
+                        <p>Upvotes: {reply.data.score}</p>
+                      </li>
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+              </ul>
             </li>
           );
         })}
