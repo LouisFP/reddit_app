@@ -12,7 +12,7 @@ export const loadPosts = createAsyncThunk(
 const postsSlice = createSlice({
   name: "posts",
   initialState: {
-    posts: {},
+    data: {},
     isPostLoading: false,
     failedToLoadPost: false,
   },
@@ -26,7 +26,7 @@ const postsSlice = createSlice({
       .addCase(loadPosts.fulfilled, (state, action) => {
         state.isPostLoading = false;
         state.failedToLoadPost = false;
-        state.posts = action.payload;
+        state.data = action.payload;
       })
       .addCase(loadPosts.rejected, (state) => {
         state.isPostLoading = false;
@@ -35,7 +35,7 @@ const postsSlice = createSlice({
   },
 });
 
-export const selectPosts = (state) => state.posts;
+export const selectPosts = (state) => state.posts.data;
 export const selectPostIsLoading = (state) => state.isPostLoading;
 export const selectPostHasError = (state) => state.failedToLoadPost;
 

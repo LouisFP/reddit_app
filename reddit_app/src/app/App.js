@@ -2,8 +2,11 @@ import React from "react";
 import "./App.css";
 import { useEffect } from "react";
 import Reddit from "../data/Reddit";
-import SearchBar from "../features/SearchBar/SearchBar";
-import Body from "../features/Body/Body";
+import { Routes, Route } from "react-router-dom";
+import Posts from "../features/Posts/Posts";
+import Comments from "../features/Comments/Comments";
+import Home from "../components/Home";
+import Index from "../components/Index";
 
 function App() {
   useEffect(() => {
@@ -14,8 +17,12 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar />
-      <Body />
+      <Routes>
+        <Route path="/r/:subreddit/:id" element={<Comments />} />
+        <Route path="/r/:subreddit" element={<Posts />} />
+        <Route path="/r" element={<Home />} />
+        <Route path="/" element={<Index />} />
+      </Routes>
     </div>
   );
 }

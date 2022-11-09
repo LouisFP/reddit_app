@@ -7,13 +7,13 @@ import {
 } from "../Subreddits/subredditsSlice";
 
 const Body = () => {
-  const isLoading = useSelector(selectSubisLoading);
-  const hasError = useSelector(selectSubHasError);
+  const subIsLoading = useSelector(selectSubisLoading);
+  const subHasError = useSelector(selectSubHasError);
 
-  if (isLoading) {
+  if (subIsLoading) {
     return <h2 className="loading">Loading...</h2>;
   }
-  if (hasError) {
+  if (subHasError) {
     return <h2 className="error-icon">Try Again...</h2>;
   }
 
