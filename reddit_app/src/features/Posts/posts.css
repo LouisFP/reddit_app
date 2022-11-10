@@ -3,7 +3,7 @@
   margin: 1.125rem auto;
 }
 
-.post-list {
+.posts-list {
   display: flex;
   flex-wrap: wrap;
 }
