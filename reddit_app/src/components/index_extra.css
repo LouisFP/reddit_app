@@ -1,0 +1,17 @@
+.index a {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border: 3px solid black;
+  border-radius: 1rem;
+  background: cornsilk;
+  color: black;
+}
+
+.index {
+  margin-top: 10rem;
+}
+
+.index p {
+  margin-bottom: 10rem;
+  font-size: 3rem;
+}

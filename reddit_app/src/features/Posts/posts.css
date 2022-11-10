@@ -21,10 +21,26 @@
   font-size: 3rem;
 }
 
-* {
-  border: 1px solid red;
-}
-
 .posts-section h3 {
   font-size: 0.75rem;
+}
+
+.post-container {
+  text-align: left;
+  margin: auto 3rem;
+}
+
+.post-container h2,
+.post-container .upvotes {
+  text-align: center;
+}
+
+.post-container h3 {
+  font-size: 2rem;
+}
+
+#image {
+  background-position: center;
+  background-size: contain;
+  height: 7rem;
 }

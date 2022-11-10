@@ -6,8 +6,8 @@ import {
   selectCommentIsLoading,
   selectComments,
 } from "./commentsSlice";
-import { Link, useParams } from "react-router-dom";
-import { clearSearchTerm } from "../SearchBar/searchBarSlice";
+import { useParams } from "react-router-dom";
+import "./comments.css";
 
 const Comments = () => {
   const comments = useSelector(selectComments);
@@ -23,9 +23,6 @@ const Comments = () => {
 
   return (
     <section className="comments-section">
-      <Link to="/" onClick={() => dispatch(clearSearchTerm())}>
-        Click to go back to searching
-      </Link>
       {commentIsLoading && <p>Loading...</p>}
       {commentHasError && <p>Try again...</p>}
       {comments.length === 0 && <p>There are no comments, sorry!</p>}
@@ -36,6 +33,7 @@ const Comments = () => {
               <div className="comment-container">
                 <h3>Author: {comment.author}</h3>
                 <p>{comment.body}</p>
+                <p>Upvotes: {comment.score}</p>
               </div>
               <ul className="replies">
                 {comment.replies.map((reply) => {

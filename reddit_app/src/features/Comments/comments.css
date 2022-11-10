@@ -1,0 +1,24 @@
+.comment {
+  display: grid;
+  grid-template-columns: auto 40rem;
+  grid-template-rows: auto auto;
+  max-width: 80rem;
+  background: cornsilk;
+  text-align: left;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.comment p {
+  margin: 0.55rem 0;
+  word-wrap: break-word;
+}
+
+.replies {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.comment-container h3 {
+  font-size: 1.4rem;
+}

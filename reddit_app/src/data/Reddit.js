@@ -37,6 +37,7 @@ const Reddit = {
       let obj = {
         id: post.data.id,
         subreddit: post.data.subreddit,
+        score: post.data.score,
         title: post.data.title,
         thumbnail: post.data.thumbnail,
         selftext: post.data.selftext,
