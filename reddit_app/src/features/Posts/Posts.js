@@ -8,6 +8,7 @@ import {
 import { loadPosts } from "./postsSlice";
 import { Link, useParams } from "react-router-dom";
 import { clearSearchTerm } from "../SearchBar/searchBarSlice";
+import "./posts.css";
 
 const Posts = () => {
   const posts = useSelector(selectPosts);
@@ -25,15 +26,16 @@ const Posts = () => {
     <section className="posts-section">
       {postIsLoading && <p>Loading...</p>}
       {postHasError && <p>Try again...</p>}
+      <Link
+        to="/"
+        onClick={() => {
+          dispatch(clearSearchTerm());
+        }}
+      >
+        Click to go back to searching
+      </Link>
+      <p className="clarification">Post results for {subreddit}</p>
       <ul className="posts-list">
-        <Link
-          to="/"
-          onClick={() => {
-            dispatch(clearSearchTerm());
-          }}
-        >
-          Click to go back to searching
-        </Link>
         {Object.values(posts).map((post) => {
           return (
             <Link to={post.id} key={post.id}>

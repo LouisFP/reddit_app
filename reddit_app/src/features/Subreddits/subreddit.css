@@ -1,0 +1,41 @@
+.subreddit-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.exception {
+  justify-self: center;
+}
+
+.subreddits {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.subreddit {
+  text-align: center;
+  border: 3px solid black;
+  width: 350px;
+  height: 350px;
+  margin: 10px;
+  background: cornsilk;
+}
+
+.subreddit img {
+  background-position: center;
+  background-size: contain;
+  height: 200px;
+}
+
+.subreddit h2 {
+  font-size: 2rem;
+}
+
+.subreddit h3 {
+  font-size: 1.5rem;
+}
+
+.exception {
+  font-size: 2rem;
+  padding-left: 24rem;
+}

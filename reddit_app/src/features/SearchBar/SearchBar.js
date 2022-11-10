@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchSearchTerm } from "./searchBarSlice";
 import { loadSubreddits } from "../Subreddits/subredditsSlice";
 import { setSearchTerm } from "./searchBarSlice";
+import "./searchBar.css";
 
 const SearchBar = () => {
   const dispatch = useDispatch();

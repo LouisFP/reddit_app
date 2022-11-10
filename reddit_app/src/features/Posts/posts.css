@@ -1,0 +1,30 @@
+.posts-section {
+  max-width: 100rem;
+  margin: 1.125rem auto;
+}
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  text-align: center;
+  border: 3px solid black;
+  width: 18rem;
+  height: 23.5rem;
+  margin: 1.125rem;
+  background: cornsilk;
+}
+
+.clarification {
+  font-size: 3rem;
+}
+
+* {
+  border: 1px solid red;
+}
+
+.posts-section h3 {
+  font-size: 0.75rem;
+}
